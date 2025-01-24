@@ -41,3 +41,9 @@ shape = SubResource("RectangleShape2D_qnep1")
 position = Vector2(337, 432)
 scale = Vector2(3.06, 0.36)
 texture = SubResource("PlaceholderTexture2D_q78ie")
+
+[node name="Player" parent="." instance=ExtResource("1_om3ox")]
+Speed = 700.0
+Acceleration = 10.0
+Deceleration = 7.0
+JumpForce = 600.0

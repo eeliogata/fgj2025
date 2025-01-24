@@ -1,42 +1,90 @@
+
+
 using Godot;
-using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 600.0f;
-	public const float JumpVelocity = -500.0f;
-	
-	public const float GravityMultiplier = 2f;
+	// Movement
+	[Export] public float Speed = 200f;
+	[Export] public float Acceleration = 8f;
+	[Export] public float Deceleration = 6f;
+
+	// Jumping
+	[Export] public float JumpForce = 400f;
+	[Export] public float MaxFallSpeed = 800f;
+	[Export] public float Gravity = 1200f;
+
+	// Variable Jump
+	[Export] public float JumpCutMultiplier = 0.5f;
+
+	// State
+	private Vector2 _velocity;
+	private bool _isJumping;
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
+		// Process movement
+		ProcessMovement((float)delta);
+		// Apply gravity
+		ApplyGravity((float)delta);
+		// Move the character
+		Velocity = _velocity;
+		MoveAndSlide();
+	}
 
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity += GetGravity() * GravityMultiplier * (float)delta;
-		}
+	private void ProcessMovement(float delta)
+	{
+		// Input for left/right movement
+		float input = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		// Accelerate or decelerate
+		if (input != 0)
 		{
-			velocity.Y = JumpVelocity;
-		}
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = velocity.MoveToward(new Vector2(direction.X * Speed, 0), 50f).X;
+			_velocity.X = Mathf.Lerp(_velocity.X, input * Speed, Acceleration * delta);
 		}
 		else
 		{
-			velocity.X = velocity.MoveToward(Vector2.Zero, 60f).X;
+			_velocity.X = Mathf.Lerp(_velocity.X, 0, Deceleration * delta);
 		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+		// Jumping
+		if (IsOnFloor() && Input.IsActionJustPressed("ui_accept"))
+		{
+			_velocity.Y = -JumpForce;
+			_isJumping = true;
+		}
+
+		// Variable jump cut
+		if (_isJumping && Input.IsActionJustReleased("ui_accept"))
+		{
+			if (_velocity.Y < 0)
+			{
+				_velocity.Y *= JumpCutMultiplier;
+			}
+			_isJumping = false;
+		}
+	}
+
+	private void ApplyGravity(float delta)
+	{
+		// Apply gravity if not on the floor
+		if (!IsOnFloor())
+		{
+			_velocity.Y += Gravity * delta;
+
+			// Clamp fall speed
+			if (_velocity.Y > MaxFallSpeed)
+			{
+				_velocity.Y = MaxFallSpeed;
+			}
+		}
+		else
+		{
+			// Reset vertical velocity when on the floor
+			if (_velocity.Y > 0)
+			{
+				_velocity.Y = 0;
+			}
+		}
 	}
 }
