@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://nmwgcubq1ace"]
-
-[ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="1_om3ox"]
+[gd_scene load_steps=4 format=3 uid="uid://nmwgcubq1ace"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eycss"]
 bounce = 0.5
@@ -43,5 +41,3 @@ shape = SubResource("RectangleShape2D_qnep1")
 position = Vector2(337, 432)
 scale = Vector2(3.06, 0.36)
 texture = SubResource("PlaceholderTexture2D_q78ie")
-
-[node name="Player" parent="." instance=ExtResource("1_om3ox")]
