@@ -54,6 +54,5 @@ texture = SubResource("PlaceholderTexture2D_q78ie")
 
 [node name="Player" parent="." instance=ExtResource("1_om3ox")]
 position = Vector2(96, 62)
-script = null
 
 [connection signal="body_entered" from="PlatformBubbleBouncy/Area2D" to="PlatformBubbleBouncy" method="_body_entered"]
