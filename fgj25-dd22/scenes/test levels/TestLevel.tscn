@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://nmwgcubq1ace"]
 
-[ext_resource type="Script" path="res://Scenes/Player.cs" id="1_itxtg"]
-[ext_resource type="Texture2D" uid="uid://706pdxn604x6" path="res://Assets/Ducky-draft.png" id="2_tafxs"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_itxtg"]
+[ext_resource type="Texture2D" uid="uid://706pdxn604x6" path="res://assets/sprites/Ducky-draft.png" id="2_tafxs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eycss"]
 bounce = 0.5

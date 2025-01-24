@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nfl7ah2xf34a"
-path="res://.godot/imported/Ducky-24px-draft.png-3097711ef57c9ee01c5afd7290078ba3.ctex"
+uid="uid://706pdxn604x6"
+path="res://.godot/imported/Ducky-draft.png-774e21bb9118223dbeabc828db1b873b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ducky-24px-draft.png"
-dest_files=["res://.godot/imported/Ducky-24px-draft.png-3097711ef57c9ee01c5afd7290078ba3.ctex"]
+source_file="res://assets/sprites/Ducky-draft.png"
+dest_files=["res://.godot/imported/Ducky-draft.png-774e21bb9118223dbeabc828db1b873b.ctex"]
 
 [params]
 
