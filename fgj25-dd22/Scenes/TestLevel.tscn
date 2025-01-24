@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://706pdxn604x6" path="res://Assets/Ducky-draft.png" id="2_tafxs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eycss"]
+bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnep1"]
 size = Vector2(133, 36)
@@ -20,6 +21,7 @@ size = Vector2(76, 76)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PlatformBubble"]
 position = Vector2(337, 432)
+scale = Vector2(4.64, 1)
 physics_material_override = SubResource("PhysicsMaterial_eycss")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformBubble/StaticBody2D"]
@@ -27,7 +29,23 @@ shape = SubResource("RectangleShape2D_qnep1")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlatformBubble"]
 position = Vector2(337, 432)
-scale = Vector2(0.66, 0.36)
+scale = Vector2(3.06, 0.36)
+texture = SubResource("PlaceholderTexture2D_q78ie")
+
+[node name="PlatformBubbleBouncy" type="Node2D" parent="."]
+position = Vector2(513, 70)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatformBubbleBouncy"]
+position = Vector2(337, 432)
+scale = Vector2(4.64, 1)
+physics_material_override = SubResource("PhysicsMaterial_eycss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformBubbleBouncy/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qnep1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformBubbleBouncy"]
+position = Vector2(337, 432)
+scale = Vector2(3.06, 0.36)
 texture = SubResource("PlaceholderTexture2D_q78ie")
 
 [node name="Player" type="CharacterBody2D" parent="."]

@@ -3,8 +3,10 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	public const float Speed = 600.0f;
+	public const float JumpVelocity = -500.0f;
+	
+	public const float GravityMultiplier = 2f;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -13,7 +15,7 @@ public partial class Player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			velocity += GetGravity() * GravityMultiplier * (float)delta;
 		}
 
 		// Handle Jump.
@@ -27,11 +29,11 @@ public partial class Player : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			velocity.X = direction.X * Speed;
+			velocity.X = velocity.MoveToward(new Vector2(direction.X * Speed, 0), 50f).X;
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			velocity.X = velocity.MoveToward(Vector2.Zero, 60f).X;
 		}
 
 		Velocity = velocity;
