@@ -7,7 +7,7 @@
 bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnep1"]
-size = Vector2(133, 36)
+size = Vector2(133, 49)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q78ie"]
 size = Vector2(200, 100)
@@ -32,9 +32,6 @@ texture = SubResource("PlaceholderTexture2D_q78ie")
 [node name="PlatformBubbleBouncy" type="Node2D" parent="."]
 position = Vector2(513, 70)
 script = ExtResource("1_66x1l")
-BaseBounceStrength = null
-BounceDirection = null
-ScaleWithVelocity = null
 
 [node name="Area2D" type="Area2D" parent="PlatformBubbleBouncy"]
 position = Vector2(337, 432)
@@ -56,7 +53,7 @@ scale = Vector2(3.06, 0.36)
 texture = SubResource("PlaceholderTexture2D_q78ie")
 
 [node name="Player" parent="." instance=ExtResource("1_om3ox")]
-position = Vector2(-106, 54)
+position = Vector2(96, 62)
 script = null
 
 [connection signal="body_entered" from="PlatformBubbleBouncy/Area2D" to="PlatformBubbleBouncy" method="_body_entered"]
