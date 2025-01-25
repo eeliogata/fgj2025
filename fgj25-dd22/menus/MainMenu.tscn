@@ -1,4 +1,21 @@
-[gd_scene format=3 uid="uid://chjimua3ryxn"]
+[gd_scene load_steps=6 format=3 uid="uid://chjimua3ryxn"]
+
+[ext_resource type="Script" path="res://menus/main_menu.gd" id="1_k31j7"]
+[ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="1_nh804"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uks7x"]
+texture = ExtResource("1_nh804")
+modulate_color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h3yo"]
+bg_color = Color(0.866667, 0.764706, 0.996078, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvsjg"]
+bg_color = Color(0.796078, 0.623529, 0.992157, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +24,81 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k31j7")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uks7x")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -112.5
+offset_right = 169.5
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Options"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.5
+offset_right = 298.5
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Duck Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
