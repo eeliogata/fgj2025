@@ -1,49 +1,96 @@
-[gd_scene load_steps=9 format=3 uid="uid://nmwgcubq1ace"]
+[gd_scene load_steps=16 format=4 uid="uid://nmwgcubq1ace"]
 
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="1_3feaf"]
 [ext_resource type="Script" path="res://scripts/TestLevel.cs" id="1_hun6b"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="1_om3ox"]
+[ext_resource type="Texture2D" uid="uid://dc4enfseju3lu" path="res://assets/environment/TableTiles.png" id="4_dstgp"]
 [ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="4_nlnl6"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eycss"]
-bounce = 0.5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnep1"]
-size = Vector2(133, 49)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q78ie"]
-size = Vector2(200, 100)
+[ext_resource type="Texture2D" uid="uid://dhoaw6fuuxc82" path="res://assets/environment/WaterTiles.png" id="5_xga8s"]
+[ext_resource type="Texture2D" uid="uid://c2s5bdo0xihrd" path="res://assets/environment/Bathtub-tileset.png" id="6_din61"]
+[ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="7_dvkur"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c25lx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pe2nr"]
+texture = ExtResource("4_dstgp")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o53ci"]
+texture = ExtResource("5_xga8s")
+texture_region_size = Vector2i(24, 24)
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+0:2/animation_speed = 3.0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_toxy1"]
+texture = ExtResource("6_din61")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_d4ykr"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_pe2nr")
+sources/1 = SubResource("TileSetAtlasSource_o53ci")
+sources/2 = SubResource("TileSetAtlasSource_toxy1")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_754ky"]
+a = Vector2(-32, -15)
+b = Vector2(267, -15)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ax1cm"]
+a = Vector2(-103, -90)
+b = Vector2(419, -90)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_hun6b")
 
 [node name="BubblePlatform" parent="." instance=ExtResource("1_3feaf")]
-position = Vector2(32, 270)
+position = Vector2(345, 281)
 numOfBubbles = 10
-
-[node name="PlatformBubble" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PlatformBubble"]
-position = Vector2(337, 432)
-scale = Vector2(4.64, 1)
-physics_material_override = SubResource("PhysicsMaterial_eycss")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformBubble/StaticBody2D"]
-shape = SubResource("RectangleShape2D_qnep1")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlatformBubble"]
-position = Vector2(337, 432)
-scale = Vector2(3.06, 0.36)
-texture = SubResource("PlaceholderTexture2D_q78ie")
+bubbleType = 2
 
 [node name="Player" parent="." instance=ExtResource("1_om3ox")]
 position = Vector2(96, 62)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="WorldBoundary" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
 position = Vector2(490, 649)
 shape = SubResource("WorldBoundaryShape2D_c25lx")
 
@@ -52,4 +99,36 @@ shape = SubResource("WorldBoundaryShape2D_c25lx")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_nlnl6")]
 process_mode = 3
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_death"]
+[node name="PauseMenu2" parent="CanvasLayer" instance=ExtResource("4_nlnl6")]
+process_mode = 3
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(28, -134)
+tile_map_data = PackedByteArray("AAAAABQAAQAAAAAAAAABABQAAQAAAAAAAAACABQAAQAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAJABQAAQAAAAAAAAAKABQAAQAAAAAAAAALABQAAQAAAAAAAAAMABQAAQAAAAAAAAANABQAAQAAAAAAAAAOABQAAQAAAAAAAAAPABQAAQAAAAAAAAAQABQAAQAAAAAAAAARABQAAQAAAAAAAAASABQAAQAAAAAAAAATABQAAQAAAAAAAAAUABQAAQAAAAAAAAAVABQAAQAAAAAAAAAAABUAAQAAAAEAAAAAABYAAQAAAAIAAAABABUAAQAAAAEAAAABABYAAQAAAAIAAAACABUAAQAAAAEAAAACABYAAQAAAAIAAAADABUAAQAAAAEAAAADABYAAQAAAAIAAAAEABUAAQAAAAEAAAAEABYAAQAAAAIAAAAFABUAAQAAAAEAAAAFABYAAQAAAAIAAAAGABUAAQAAAAEAAAAGABYAAQAAAAIAAAAHABUAAQAAAAEAAAAHABYAAQAAAAIAAAAIABUAAQAAAAEAAAAIABYAAQAAAAIAAAAJABUAAQAAAAEAAAAJABYAAQAAAAIAAAAKABUAAQAAAAEAAAAKABYAAQAAAAIAAAALABUAAQAAAAEAAAALABYAAQAAAAIAAAAMABUAAQAAAAEAAAAMABYAAQAAAAIAAAANABUAAQAAAAEAAAANABYAAQAAAAIAAAAOABUAAQAAAAEAAAAOABYAAQAAAAIAAAAPABUAAQAAAAEAAAAPABYAAQAAAAIAAAAQABUAAQAAAAEAAAAQABYAAQAAAAIAAAARABUAAQAAAAEAAAARABYAAQAAAAIAAAASABUAAQAAAAEAAAASABYAAQAAAAIAAAATABUAAQAAAAEAAAATABYAAQAAAAIAAAAUABUAAQAAAAEAAAAUABYAAQAAAAIAAAAVABUAAQAAAAEAAAAVABYAAQAAAAIAAAA=")
+tile_set = SubResource("TileSet_d4ykr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(-56, 351)
+shape = SubResource("SegmentShape2D_754ky")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(-41, -143)
+tile_map_data = PackedByteArray("AAAAAA4AAgABAAAAAAABAA4AAgABAAAAAAACAA4AAgABAAAAAAADAA4AAgABAAAAAAAEAA4AAgABAAAAAAAFAA4AAgABAAAAAAAGAA4AAgABAAAAAAAHAA4AAgABAAAAAAAIAA4AAgABAAAAAAAJAA4AAgABAAAAAAAKAA4AAgABAAAAAAALAA4AAgAEAAAAAAD//w4AAgADAAAAAAD//w8AAgAGAAAAAAD//xAAAgAGAAAAAAAAAA8AAgAAAAAAAAAAABAAAgAAAAAAAAABAA8AAgAAAAAAAAABABAAAgAAAAAAAAACAA8AAgAAAAAAAAACABAAAgAAAAAAAAADAA8AAgAAAAAAAAADABAAAgAAAAAAAAAEAA8AAgAAAAAAAAAEABAAAgAAAAAAAAAFAA8AAgAAAAAAAAAFABAAAgAAAAAAAAAGAA8AAgAAAAAAAAAGABAAAgAAAAAAAAAHAA8AAgAAAAAAAAAHABAAAgAAAAAAAAAIAA8AAgAAAAAAAAAIABAAAgAAAAAAAAAJAA8AAgAAAAAAAAAJABAAAgAAAAAAAAAKAA8AAgAAAAAAAAAKABAAAgAAAAAAAAALAA8AAgAHAAAAAAALABAAAgAHAAAAAAD//xEAAgAFAAAAAAALABEAAgACAAAAAAAAABEAAgAIAAAAAAABABEAAgAIAAAAAAACABEAAgAIAAAAAAADABEAAgAIAAAAAAAEABEAAgAIAAAAAAAFABEAAgAIAAAAAAAGABEAAgAIAAAAAAAHABEAAgAIAAAAAAAIABEAAgAIAAAAAAAJABEAAgAIAAAAAAAKABEAAgAIAAAAAAAUAA8AAAABAAEAAAAUABAAAAACAAEAAAAUABEAAAACAAEAAAAUABIAAAACAAEAAAAUABMAAAACAAEAAAATAA8AAAAAAAEAAAATABAAAAAAAAEAAAATABEAAAAAAAEAAAATABIAAAAAAAEAAAATABMAAAAAAAEAAAAZAA8AAAABAAEAAAAZABAAAAAAAAEAAAAZABEAAAAAAAEAAAAZABIAAAAAAAEAAAAZABMAAAAAAAEAAAAaAA8AAAACAAEAAAAaABAAAAACAAEAAAAaABEAAAACAAEAAAAaABIAAAACAAEAAAAaABMAAAACAAEAAAATABQAAAAAAAIAAAAUABQAAAACAAIAAAAaABQAAAACAAIAAAAZABQAAAAAAAIAAAATAA4AAAAAAAAAAAAaAA4AAAACAAAAAAAUAA4AAAABAAAAAAAVAA4AAAABAAAAAAAWAA4AAAABAAAAAAAXAA4AAAABAAAAAAAYAA4AAAABAAAAAAAZAA4AAAABAAAAAAAVAA8AAAABAAIAAAAWAA8AAAABAAIAAAAXAA8AAAABAAIAAAAYAA8AAAABAAIAAAA=")
+tile_set = SubResource("TileSet_d4ykr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMapLayer2"]
+position = Vector2(69, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D2"]
+position = Vector2(106, 577)
+shape = SubResource("SegmentShape2D_ax1cm")
+
+[node name="Spikes" parent="." instance=ExtResource("7_dvkur")]
+position = Vector2(200, 333)
+numOfSpikes = 5
+
+[connection signal="body_entered" from="WorldBoundary" to="." method="_on_death"]

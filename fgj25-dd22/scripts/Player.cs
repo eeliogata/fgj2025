@@ -48,6 +48,8 @@ public partial class Player : CharacterBody2D
 		{
 			_velocity.X = Mathf.Lerp(_velocity.X, 0, Deceleration * delta);
 		}
+		
+		GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH = _velocity.X > 0;
 
 		// Jumping
 		if (IsOnFloor() && Input.IsActionJustPressed("ui_accept"))
