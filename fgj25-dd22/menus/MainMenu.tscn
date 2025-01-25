@@ -62,7 +62,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 50
-text = "Duck Adventure"
+text = "Duck 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 

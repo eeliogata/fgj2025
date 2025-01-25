@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/TestLevel.cs" id="1_hun6b"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="1_om3ox"]
 [ext_resource type="Texture2D" uid="uid://dc4enfseju3lu" path="res://assets/environment/TableTiles.png" id="4_dstgp"]
-[ext_resource type="PackedScene" path="res://menus/pause_menu.tscn" id="4_nlnl6"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="4_nlnl6"]
 [ext_resource type="Texture2D" uid="uid://dhoaw6fuuxc82" path="res://assets/environment/WaterTiles.png" id="5_xga8s"]
 [ext_resource type="Texture2D" uid="uid://c2s5bdo0xihrd" path="res://assets/environment/Bathtub-tileset.png" id="6_din61"]
 [ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="7_dvkur"]
