@@ -8,6 +8,10 @@ public partial class bubblePlatform : Node2D
 	[Export] private int numOfBubbles = 1;
 
 	// Called when the node enters the scene tree for the first time.
+	
+	[Export]
+	SingleBubble.bubbleType bubbleType = SingleBubble.bubbleType.Normal;
+	
 
 	public override void _Ready()
 	{
@@ -16,9 +20,13 @@ public partial class bubblePlatform : Node2D
 		CollisionShape2D c = GetNode<CollisionShape2D>("StaticBody2D/CollisionShape2D");
 		c.Scale = new Vector2(numOfBubbles*2, 1);
 		c.Position = new Vector2(((float)numOfBubbles * 24f)/2f, 12);
+		CollisionShape2D a = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
+		a.Scale = new Vector2(numOfBubbles, 1);
+		a.Position = new Vector2(((float)numOfBubbles * 24f)/2f, 0);
 		for (int i = 0; i < numOfBubbles; i++)
 		{
 			Node bi = b.Instantiate();
+			(bi.GetChild(0) as SingleBubble).Type = bubbleType;
 			AddChild(bi);
 			bubbles[i] = bi;
 			bi.CallDeferred(Node2D.MethodName.SetPosition, new Vector2(i * 24, 0));
@@ -29,5 +37,13 @@ public partial class bubblePlatform : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+	}
+	
+	public void _on_bounce(Node2D body)
+	{
+		GD.Print("fkdlj");
+		Player b = body as Player;
+		b.bounceValue = b.prevFallValue * 0.8f;
+		GD.Print(-b.prevFallValue * 0.8f);
 	}
 }
