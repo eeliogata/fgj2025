@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="FGJ25-DD22"
-run/main_scene="res://scenes/test levels/TestLevel.tscn"
+run/main_scene="res://menus/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://assets/sprites/icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [dotnet]
 

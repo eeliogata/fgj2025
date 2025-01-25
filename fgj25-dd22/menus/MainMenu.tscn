@@ -1,3 +1,209 @@
-[gd_scene format=3 uid="uid://bsqyy5rcny8su"]
+[gd_scene load_steps=6 format=3 uid="uid://chjimua3ryxn"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_f1v83"]
+[ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="1_nh804"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uks7x"]
+texture = ExtResource("1_nh804")
+modulate_color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h3yo"]
+bg_color = Color(0.866667, 0.764706, 0.996078, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvsjg"]
+bg_color = Color(0.796078, 0.623529, 0.992157, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1v83")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uks7x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.5
+offset_right = 298.5
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Duck Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 450.5
+offset_top = 227.5
+offset_right = 789.5
+offset_bottom = 452.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Menu1/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="Menu1/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Options"
+
+[node name="Quit" type="Button" parent="Menu1/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Quit"
+
+[node name="Menu2" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsText" type="Label" parent="Menu2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.0
+offset_top = 73.0
+offset_right = 299.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OtherSettings" type="MarginContainer" parent="Menu2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -66.5
+offset_right = 220.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu2/OtherSettings"]
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeText" type="Label" parent="Menu2/OtherSettings/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="volume" type="HSlider" parent="Menu2/OtherSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="MuteText" type="Label" parent="Menu2/OtherSettings/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="MuteBox" type="CheckBox" parent="Menu2/OtherSettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Resolutions" type="OptionButton" parent="Menu2/OtherSettings/VBoxContainer"]
+layout_mode = 2
+selected = 2
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Menu2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = 112.0
+offset_right = 170.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="Menu2/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
+text = "Back"
+
+[connection signal="pressed" from="Menu1/Buttons/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu1/Buttons/OptionsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu1/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="Menu2/OtherSettings/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Menu2/OtherSettings/VBoxContainer/MuteBox" to="." method="_on_mute_box_toggled"]
+[connection signal="item_selected" from="Menu2/OtherSettings/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="Menu2/Buttons/Back" to="." method="_on_back_pressed"]
