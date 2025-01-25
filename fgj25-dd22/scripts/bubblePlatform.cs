@@ -86,7 +86,7 @@ public partial class bubblePlatform : Node2D
 				hasBeenBoosted = false;
 			}
 		}
-		else if (bubbleType == SingleBubble.bubbleType.Ghost)
+		else if (body is Player && bubbleType == SingleBubble.bubbleType.Ghost)
 		{
 			disappear = true;
 		}
