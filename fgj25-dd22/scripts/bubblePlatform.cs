@@ -14,7 +14,7 @@ public partial class bubblePlatform : Node2D
 		var b = GD.Load<PackedScene>("res://entities/platforms/single_bubble.tscn");
 		Node[] bubbles = new Node[numOfBubbles];
 		CollisionShape2D c = GetNode<CollisionShape2D>("StaticBody2D/CollisionShape2D");
-		c.Scale = new Vector2(numOfBubbles * 24, 1);
+		c.Scale = new Vector2(numOfBubbles*2, 1);
 		c.Position = new Vector2(((float)numOfBubbles * 24f)/2f, 12);
 		for (int i = 0; i < numOfBubbles; i++)
 		{
