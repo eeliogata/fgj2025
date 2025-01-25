@@ -39,11 +39,30 @@ public partial class bubblePlatform : Node2D
 	{
 	}
 	
+	bool hasBeenBoosted = false;
+	
 	public void _on_bounce(Node2D body)
 	{
-		GD.Print("fkdlj");
 		Player b = body as Player;
-		b.bounceValue = b.prevFallValue * 0.8f;
-		GD.Print(-b.prevFallValue * 0.8f);
+		if(bubbleType == SingleBubble.bubbleType.Bouncy)
+		{
+			b.bounceValue = b.prevFallValue * 0.8f;
+		}
+		if(bubbleType == SingleBubble.bubbleType.HighBouncy)
+		{
+			if(hasBeenBoosted)
+			{
+				b.bounceValue = b.prevFallValue * 0.8f;
+			}
+			if(!hasBeenBoosted)
+			{
+				b.bounceValue = b.prevFallValue * 1.5f;
+				hasBeenBoosted = true;
+			}
+			if(b.bounceValue <= 50)
+			{
+				hasBeenBoosted = false;				
+			}
+		}
 	}
 }

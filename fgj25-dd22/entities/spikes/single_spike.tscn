@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnysa1a7cbe6c"]
+
+[ext_resource type="Texture2D" uid="uid://dtbmximbjgwex" path="res://assets/environment/Spike.png" id="1_d1tv8"]
+
+[node name="SingleSpike" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12, 12)
+texture = ExtResource("1_d1tv8")
