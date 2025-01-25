@@ -7,3 +7,5 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="BubbleInventory" parent="." instance=ExtResource("1_x6rrm")]
+amountOfGhost = 1
+amountOfFloating = 2

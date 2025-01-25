@@ -83,7 +83,6 @@ script = ExtResource("1_hun6b")
 [node name="BubblePlatform" parent="." instance=ExtResource("1_3feaf")]
 position = Vector2(345, 281)
 numOfBubbles = 10
-bubbleType = 2
 
 [node name="Player" parent="." instance=ExtResource("1_om3ox")]
 position = Vector2(96, 62)

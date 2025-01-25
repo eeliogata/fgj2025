@@ -1,16 +1,149 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqsxxvylykp3n"]
+[gd_scene load_steps=14 format=3 uid="uid://cqsxxvylykp3n"]
 
 [ext_resource type="Script" path="res://scripts/BubbleInventory.cs" id="1_ohqqm"]
+[ext_resource type="ButtonGroup" uid="uid://bxyb2b4ntwub" path="res://assets/sprites/hotbar_group.tres" id="2_5ehbf"]
+[ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="2_x1iut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ripf4"]
 size = Vector2(1274, 726)
 
+[sub_resource type="InputEventKey" id="InputEventKey_1mwdw"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_70wev"]
+events = [SubResource("InputEventKey_1mwdw")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qs2k6"]
+outline_size = 1
+outline_color = Color(0.385493, 0.385492, 0.385492, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.576471)
+
+[sub_resource type="InputEventKey" id="InputEventKey_6jj18"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_40tsj"]
+events = [SubResource("InputEventKey_6jj18")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_26v56"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_xste6"]
+events = [SubResource("InputEventKey_26v56")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_h2tcr"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_54dd3"]
+events = [SubResource("InputEventKey_h2tcr")]
+
 [node name="BubbleInventory" type="Node2D"]
 script = ExtResource("1_ohqqm")
+amountOfSimple = 3
+amountOfBouncy = 2
+amountOfFloating = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ripf4")
+
+[node name="Container" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="Container"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -84.0
+offset_right = 34.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+columns = 4
+
+[node name="Basic" type="PanelContainer" parent="Container/GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/GridContainer/Basic"]
+layout_mode = 2
+tooltip_text = "Simple bubble"
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("2_5ehbf")
+shortcut = SubResource("Shortcut_70wev")
+icon = ExtResource("2_x1iut")
+
+[node name="Label" type="Label" parent="Container/GridContainer/Basic"]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_qs2k6")
+horizontal_alignment = 1
+
+[node name="Bouncy" type="PanelContainer" parent="Container/GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/GridContainer/Bouncy"]
+layout_mode = 2
+tooltip_text = "Simple bubble"
+focus_mode = 0
+toggle_mode = true
+button_group = ExtResource("2_5ehbf")
+shortcut = SubResource("Shortcut_40tsj")
+icon = ExtResource("2_x1iut")
+
+[node name="Label" type="Label" parent="Container/GridContainer/Bouncy"]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_qs2k6")
+horizontal_alignment = 1
+
+[node name="Ghost" type="PanelContainer" parent="Container/GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/GridContainer/Ghost"]
+layout_mode = 2
+tooltip_text = "Simple bubble"
+focus_mode = 0
+toggle_mode = true
+button_group = ExtResource("2_5ehbf")
+shortcut = SubResource("Shortcut_xste6")
+icon = ExtResource("2_x1iut")
+
+[node name="Label" type="Label" parent="Container/GridContainer/Ghost"]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_qs2k6")
+horizontal_alignment = 1
+
+[node name="Floating" type="PanelContainer" parent="Container/GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/GridContainer/Floating"]
+layout_mode = 2
+tooltip_text = "Simple bubble"
+focus_mode = 0
+toggle_mode = true
+button_group = ExtResource("2_5ehbf")
+shortcut = SubResource("Shortcut_54dd3")
+icon = ExtResource("2_x1iut")
+
+[node name="Label" type="Label" parent="Container/GridContainer/Floating"]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_qs2k6")
+horizontal_alignment = 1
 
 [connection signal="input_event" from="Area2D" to="." method="_on_inventory_input_event"]

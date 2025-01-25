@@ -13,9 +13,8 @@ public partial class SingleBubble : Sprite2D
 	{
 		Normal,
 		Bouncy, 
-		HighBouncy,
-		Disappearing,
-		Moving,
+		Ghost,
+		Floating,
 		
 	}
 	[Export]
@@ -37,7 +36,6 @@ public partial class SingleBubble : Sprite2D
 				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-gray.png");
 				break;
 			case bubbleType.Bouncy:
-			case bubbleType.HighBouncy:
 				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-pink.png");
 				break;
 		}
