@@ -6,6 +6,7 @@ public partial class bubblePlatform : Node2D
 {
 
 	[Export] private int numOfBubbles = 1;
+	[Export] public bool permanent = false;
 
 	// Called when the node enters the scene tree for the first time.
 

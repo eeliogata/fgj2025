@@ -1,10 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://bye3pfarwoxfl"]
-
-[ext_resource type="PackedScene" uid="uid://cqsxxvylykp3n" path="res://entities/bubble inventory/bubble_inventory.tscn" id="1_x6rrm"]
+[gd_scene format=3 uid="uid://bye3pfarwoxfl"]
 
 [node name="Camera2D" type="Camera2D"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
-
-[node name="BubbleInventory" parent="." instance=ExtResource("1_x6rrm")]
-amountOfGhost = 1

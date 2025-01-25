@@ -1,14 +1,15 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class BubbleInventory : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 
-	[Export] int amountOfSimple = 0;
-	[Export] int amountOfBouncy = 0;
-	[Export] int amountOfGhost = 0;
-	[Export] int amountOfFloating = 0;
+	[Export] public int amountOfSimple = 0;
+	[Export] public int amountOfBouncy = 0;
+	[Export] public int amountOfGhost = 0;
+	[Export] public int amountOfFloating = 0;
 
 	struct InventoryItem
 	{
@@ -21,8 +22,11 @@ public partial class BubbleInventory : Node2D
 		}
 	}
 
+
 	InventoryItem[] items = new InventoryItem[4];
 	int[] nums = new int[4];
+
+	List<Node> placedBubbles = new();
 
 	public override void _Ready()
 	{
@@ -30,7 +34,10 @@ public partial class BubbleInventory : Node2D
 		items[1] = new InventoryItem("Container/GridContainer/Bouncy", this);
 		items[2] = new InventoryItem("Container/GridContainer/Ghost", this);
 		items[3] = new InventoryItem("Container/GridContainer/Floating", this);
-
+	}
+	
+	public void init()
+	{
 		nums[0] = amountOfSimple;
 		nums[1] = amountOfBouncy;
 		nums[2] = amountOfGhost;
@@ -44,6 +51,16 @@ public partial class BubbleInventory : Node2D
 				items[i].button.Disabled = true;
 			}
 		}
+	}
+	
+	public void _on_player_died()
+	{
+		placedBubbles.ForEach((b)=>
+		{
+			GetNode("/root").RemoveChild(b);
+		});
+		placedBubbles.Clear();
+		init();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,6 +92,7 @@ public partial class BubbleInventory : Node2D
 				bubblePlatform bp = GD.Load<PackedScene>("res://entities/platforms/bubblePlatform.tscn").Instantiate() as bubblePlatform;;
 				bp.bubbleType = (SingleBubble.bubbleType)bubbId;
 				GetNode("/root").AddChild(bp);
+				placedBubbles.Add(bp);
 				Vector2 pos = GetGlobalMousePosition();
 				pos.X -= 72;
 				pos.Y -= 24;

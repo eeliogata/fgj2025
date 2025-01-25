@@ -36,7 +36,7 @@ public partial class spikes : Node2D
 		
 	public void _on_kill(Node2D body)
 	{
-		body.Position = new Vector2(96, 62);
+		body.EmitSignal("Died");
 	}
 
 }

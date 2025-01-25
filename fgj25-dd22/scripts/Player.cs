@@ -16,12 +16,37 @@ public partial class Player : CharacterBody2D
 
 	// Variable Jump
 	[Export] public float JumpCutMultiplier = 0.5f;
+	
+	[Signal] public delegate void DiedEventHandler();
 
 	// State
 	private Vector2 _velocity;
 	private bool _isJumping;
 	public float bounceValue = -1f;
 	public float prevFallValue = 0f;
+	
+	[Export] int amountOfSimple;
+	[Export] int amountOfBouncy;
+	[Export] int amountOfGhost;
+	[Export] int amountOfFloating;
+	
+	[Export] Vector2 playerPos;
+
+	public override void _Ready()
+	{
+		BubbleInventory bi = GetNode<BubbleInventory>("./BubbleInventory");
+		bi.amountOfBouncy = amountOfBouncy;
+		bi.amountOfFloating = amountOfFloating;
+		bi.amountOfGhost = amountOfGhost;
+		bi.amountOfSimple = amountOfSimple;
+		bi.init();
+	}
+	
+	public void _on_died()
+	{
+		Position = playerPos;
+		
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhufeg1fh3ef5"]
+
+[ext_resource type="Script" path="res://scripts/WordBoundary.cs" id="1_ir4gp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n34uv"]
+
+[node name="WordBoundary" type="Node2D"]
+script = ExtResource("1_ir4gp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_n34uv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_died"]
