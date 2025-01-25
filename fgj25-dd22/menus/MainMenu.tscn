@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://chjimua3ryxn"]
+[gd_scene load_steps=14 format=3 uid="uid://chjimua3ryxn"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_f1v83"]
 [ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="1_nh804"]
+[ext_resource type="Texture2D" uid="uid://bgvl6q5up3seg" path="res://assets/menus/MainMenuBG2.png" id="2_8d5cd"]
 [ext_resource type="FontFile" uid="uid://cl713v4v5bjxq" path="res://assets/font/LIBRIUM_.ttf" id="3_bxa6j"]
 [ext_resource type="Texture2D" uid="uid://dthprnxeef2ge" path="res://assets/sprites/Bubble-pink-mainmenu-v2.png" id="4_a8244"]
 [ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="5_htvce"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uks7x"]
-texture = ExtResource("1_nh804")
-modulate_color = Color(0.43134, 0.43134, 0.43134, 1)
+texture = ExtResource("2_8d5cd")
+modulate_color = Color(0.837508, 0.702001, 0.767865, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdmmq"]
 texture = ExtResource("4_a8244")
@@ -58,6 +59,7 @@ offset_left = -298.5
 offset_right = 298.5
 offset_bottom = 129.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 50
 text = "Duck Adventure"
@@ -144,6 +146,7 @@ offset_top = 73.0
 offset_right = 299.0
 offset_bottom = 202.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 50
 text = "Options"
