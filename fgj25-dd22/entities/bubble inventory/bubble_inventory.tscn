@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqsxxvylykp3n"]
+[gd_scene load_steps=25 format=3 uid="uid://cqsxxvylykp3n"]
 
 [ext_resource type="Script" path="res://scripts/BubbleInventory.cs" id="1_ohqqm"]
-[ext_resource type="ButtonGroup" uid="uid://bxyb2b4ntwub" path="res://assets/sprites/hotbar_group.tres" id="2_5ehbf"]
+[ext_resource type="ButtonGroup" path="res://assets/sprites/hotbar_group.tres" id="2_5ehbf"]
 [ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="2_x1iut"]
 [ext_resource type="Texture2D" uid="uid://d26ebge47xf3q" path="res://assets/sprites/Bubble-blue.png" id="3_6f6px"]
 [ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="3_bbsk2"]
@@ -9,6 +9,20 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ripf4"]
 size = Vector2(1274, 726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1tj0"]
+bg_color = Color(0, 0.729412, 0.952941, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp0mu"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="InputEventKey" id="InputEventKey_1mwdw"]
 device = -1
@@ -24,6 +38,20 @@ outline_color = Color(0.385493, 0.385492, 0.385492, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.576471)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ngp"]
+bg_color = Color(0.298039, 0.729412, 0.505882, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcuka"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="InputEventKey" id="InputEventKey_6jj18"]
 device = -1
 keycode = 50
@@ -32,6 +60,20 @@ unicode = 50
 [sub_resource type="Shortcut" id="Shortcut_40tsj"]
 events = [SubResource("InputEventKey_6jj18")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lujfq"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld863"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="InputEventKey" id="InputEventKey_26v56"]
 device = -1
 keycode = 51
@@ -39,6 +81,20 @@ unicode = 51
 
 [sub_resource type="Shortcut" id="Shortcut_xste6"]
 events = [SubResource("InputEventKey_26v56")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv34g"]
+bg_color = Color(0.74902, 0.584314, 0.843137, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p73nq"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="InputEventKey" id="InputEventKey_h2tcr"]
 device = -1
@@ -50,9 +106,6 @@ events = [SubResource("InputEventKey_h2tcr")]
 
 [node name="BubbleInventory" type="Node2D"]
 script = ExtResource("1_ohqqm")
-amountOfSimple = 3
-amountOfBouncy = 2
-amountOfFloating = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -83,11 +136,14 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "Simple bubble"
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_w1tj0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yp0mu")
 toggle_mode = true
 button_pressed = true
 button_group = ExtResource("2_5ehbf")
 shortcut = SubResource("Shortcut_70wev")
 icon = ExtResource("3_6f6px")
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="Container/GridContainer/Basic"]
 layout_mode = 2
@@ -102,10 +158,13 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "Simple bubble"
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_u0ngp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gcuka")
 toggle_mode = true
 button_group = ExtResource("2_5ehbf")
 shortcut = SubResource("Shortcut_40tsj")
 icon = ExtResource("4_u8v12")
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="Container/GridContainer/Bouncy"]
 layout_mode = 2
@@ -120,10 +179,13 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "Simple bubble"
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_lujfq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ld863")
 toggle_mode = true
 button_group = ExtResource("2_5ehbf")
 shortcut = SubResource("Shortcut_xste6")
 icon = ExtResource("2_x1iut")
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="Container/GridContainer/Ghost"]
 layout_mode = 2
@@ -138,10 +200,13 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "Simple bubble"
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_tv34g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p73nq")
 toggle_mode = true
 button_group = ExtResource("2_5ehbf")
 shortcut = SubResource("Shortcut_54dd3")
 icon = ExtResource("3_bbsk2")
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="Container/GridContainer/Floating"]
 layout_mode = 2
