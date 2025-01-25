@@ -1,18 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://chjimua3ryxn"]
+[gd_scene load_steps=9 format=3 uid="uid://chjimua3ryxn"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_f1v83"]
 [ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="1_nh804"]
+[ext_resource type="Texture2D" uid="uid://ci2ohc8pqwcmj" path="res://assets/sprites/Bubble-pink-mainmenu.png" id="3_ln325"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uks7x"]
 texture = ExtResource("1_nh804")
 modulate_color = Color(0.43134, 0.43134, 0.43134, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdmmq"]
-texture = ExtResource("1_nh804")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+texture = ExtResource("3_ln325")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sa0sn"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr4mg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h3yo"]
 bg_color = Color(0.866667, 0.764706, 0.996078, 0.745098)
@@ -84,7 +83,7 @@ theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxTexture_fdmmq")
-theme_override_styles/normal = SubResource("StyleBoxTexture_sa0sn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qr4mg")
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="Menu1/Buttons"]
