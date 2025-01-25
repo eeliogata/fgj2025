@@ -46,10 +46,8 @@ public partial class BubbleInventory : Node2D
 		for (int i = 0; i < 4; i++)
 		{
 			items[i].label.Text = nums[i].ToString();
-			if (nums[i] == 0)
-			{
-				items[i].button.Disabled = true;
-			}
+			items[i].button.Disabled = nums[i] == 0;
+
 		}
 	}
 	
