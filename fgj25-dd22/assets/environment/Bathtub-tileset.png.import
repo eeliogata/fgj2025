@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtbmximbjgwex"
-path="res://.godot/imported/Spike.png-b67a991c349ebe46e5bf4fca649d5aca.ctex"
+uid="uid://c2s5bdo0xihrd"
+path="res://.godot/imported/Bathtub-tileset.png-8d029d8034b34c9ad6e396bfe50f400e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Spike.png"
-dest_files=["res://.godot/imported/Spike.png-b67a991c349ebe46e5bf4fca649d5aca.ctex"]
+source_file="res://assets/environment/Bathtub-tileset.png"
+dest_files=["res://.godot/imported/Bathtub-tileset.png-8d029d8034b34c9ad6e396bfe50f400e.ctex"]
 
 [params]
 
