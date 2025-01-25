@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://by10jvvlmiafc"]
+
+[ext_resource type="Script" path="res://Scenes/Player.cs" id="1_itxtg"]
+[ext_resource type="Texture2D" path="res://Assets/Ducky-draft.png" id="2_tafxs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eycss"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnep1"]
+size = Vector2(133, 36)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q78ie"]
+size = Vector2(200, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgor3"]
+size = Vector2(76, 76)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlatformBubble" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatformBubble"]
+position = Vector2(337, 432)
+scale = Vector2(4.64, 1)
+physics_material_override = SubResource("PhysicsMaterial_eycss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformBubble/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qnep1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformBubble"]
+position = Vector2(337, 432)
+scale = Vector2(3.06, 0.36)
+texture = SubResource("PlaceholderTexture2D_q78ie")
+
+[node name="PlatformBubbleBouncy" type="Node2D" parent="."]
+position = Vector2(513, 70)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatformBubbleBouncy"]
+position = Vector2(337, 432)
+scale = Vector2(4.64, 1)
+physics_material_override = SubResource("PhysicsMaterial_eycss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformBubbleBouncy/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qnep1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformBubbleBouncy"]
+position = Vector2(337, 432)
+scale = Vector2(3.06, 0.36)
+texture = SubResource("PlaceholderTexture2D_q78ie")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-106, 54)
+script = ExtResource("1_itxtg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(457, 287)
+shape = SubResource("RectangleShape2D_sgor3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(457, 285)
+scale = Vector2(5, 5)
+texture = ExtResource("2_tafxs")
