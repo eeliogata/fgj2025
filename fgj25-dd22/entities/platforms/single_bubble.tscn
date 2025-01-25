@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmnpncmm0u1cm"]
+
+[ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="1_obf8s"]
+[ext_resource type="Script" path="res://scripts/SingleBubble.cs" id="2_kjm3q"]
+
+[node name="SingleBubble" type="Node2D"]
+
+[node name="Bubble-gray" type="Sprite2D" parent="." node_paths=PackedStringArray("_pointA", "_pointB")]
+texture_filter = 1
+position = Vector2(12, 24)
+texture = ExtResource("1_obf8s")
+script = ExtResource("2_kjm3q")
+_pointA = NodePath("../PointA")
+_pointB = NodePath("../PointB")
+
+[node name="PointA" type="Node2D" parent="."]
+position = Vector2(12, 12)
+
+[node name="PointB" type="Node2D" parent="."]
+position = Vector2(12, 24)
