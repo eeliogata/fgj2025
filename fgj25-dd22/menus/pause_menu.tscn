@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://dy203k62skox6"]
+
+[ext_resource type="Script" path="res://menus/pause_menu.gd" id="1_7cteb"]
+[ext_resource type="FontFile" uid="uid://cl713v4v5bjxq" path="res://assets/font/LIBRIUM_.ttf" id="1_xoy5t"]
+[ext_resource type="Texture2D" uid="uid://dthprnxeef2ge" path="res://assets/sprites/Bubble-pink-mainmenu-v2.png" id="2_40gqb"]
+[ext_resource type="Texture2D" uid="uid://bgvl6q5up3seg" path="res://assets/menus/MainMenuBG2.png" id="2_eql3w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o41w6"]
+texture = ExtResource("2_eql3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_802tk"]
+texture = ExtResource("2_40gqb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyl7d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4x4hv"]
+texture = ExtResource("2_40gqb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4llht"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01u6j"]
+texture = ExtResource("2_40gqb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukavt"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7cteb")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.2, 0.2, 0.2, 0.431373)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_o41w6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -176.5
+offset_right = 128.5
+offset_bottom = 176.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_fonts/font = ExtResource("1_xoy5t")
+theme_override_font_sizes/font_size = 40
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_fonts/font = ExtResource("1_xoy5t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_802tk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyl7d")
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_fonts/font = ExtResource("1_xoy5t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_4x4hv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4llht")
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.266667, 1, 1)
+theme_override_fonts/font = ExtResource("1_xoy5t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxTexture_01u6j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ukavt")
+text = "Menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

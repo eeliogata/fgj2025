@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://nmwgcubq1ace"]
+[gd_scene load_steps=16 format=4 uid="uid://nmwgcubq1ace"]
 
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="1_3feaf"]
 [ext_resource type="Script" path="res://scripts/TestLevel.cs" id="1_hun6b"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="1_om3ox"]
 [ext_resource type="Texture2D" uid="uid://dc4enfseju3lu" path="res://assets/environment/TableTiles.png" id="4_dstgp"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="4_nlnl6"]
 [ext_resource type="Texture2D" uid="uid://dhoaw6fuuxc82" path="res://assets/environment/WaterTiles.png" id="5_xga8s"]
 [ext_resource type="Texture2D" uid="uid://c2s5bdo0xihrd" path="res://assets/environment/Bathtub-tileset.png" id="6_din61"]
 [ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="7_dvkur"]
@@ -92,6 +93,13 @@ position = Vector2(96, 62)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
 position = Vector2(490, 649)
 shape = SubResource("WorldBoundaryShape2D_c25lx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_nlnl6")]
+process_mode = 3
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(28, -134)
