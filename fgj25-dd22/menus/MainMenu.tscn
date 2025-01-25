@@ -1,20 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://chjimua3ryxn"]
+[gd_scene load_steps=13 format=3 uid="uid://chjimua3ryxn"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_f1v83"]
 [ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="1_nh804"]
-[ext_resource type="Texture2D" uid="uid://ci2ohc8pqwcmj" path="res://assets/sprites/Bubble-pink-mainmenu.png" id="3_ln325"]
+[ext_resource type="FontFile" uid="uid://cl713v4v5bjxq" path="res://assets/font/LIBRIUM_.ttf" id="3_bxa6j"]
+[ext_resource type="Texture2D" uid="uid://dthprnxeef2ge" path="res://assets/sprites/Bubble-pink-mainmenu-v2.png" id="4_a8244"]
+[ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="5_htvce"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uks7x"]
 texture = ExtResource("1_nh804")
 modulate_color = Color(0.43134, 0.43134, 0.43134, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdmmq"]
-texture = ExtResource("3_ln325")
+texture = ExtResource("4_a8244")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr4mg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8suaq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h3yo"]
-bg_color = Color(0.866667, 0.764706, 0.996078, 0.745098)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jarky"]
+texture = ExtResource("4_a8244")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvsjg"]
 bg_color = Color(0.796078, 0.623529, 0.992157, 0)
@@ -22,6 +24,12 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4msb"]
+texture = ExtResource("4_a8244")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6ug8"]
+texture = ExtResource("4_a8244")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_uks7x")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -50,15 +58,19 @@ offset_left = -298.5
 offset_right = 298.5
 offset_bottom = 129.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 50
 text = "Duck Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Menu1" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Buttons" type="VBoxContainer" parent="Menu1"]
 layout_mode = 1
@@ -67,10 +79,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 450.5
-offset_top = 227.5
-offset_right = 789.5
-offset_bottom = 452.5
+offset_left = -169.5
+offset_top = -112.5
+offset_right = 169.5
+offset_bottom = 112.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -81,9 +93,10 @@ theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxTexture_fdmmq")
-theme_override_styles/normal = SubResource("StyleBoxTexture_qr4mg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8suaq")
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="Menu1/Buttons"]
@@ -93,8 +106,9 @@ theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jarky")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
 text = "Options"
 
@@ -105,8 +119,9 @@ theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r4msb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
 text = "Quit"
 
@@ -129,6 +144,7 @@ offset_top = 73.0
 offset_right = 299.0
 offset_bottom = 202.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 horizontal_alignment = 1
@@ -156,13 +172,18 @@ alignment = 1
 
 [node name="VolumeText" type="Label" parent="Menu2/OtherSettings/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bxa6j")
 text = "Volume"
 
 [node name="volume" type="HSlider" parent="Menu2/OtherSettings/VBoxContainer"]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_htvce")
+theme_override_icons/grabber_highlight = ExtResource("1_nh804")
+theme_override_icons/tick = ExtResource("5_htvce")
 
 [node name="MuteText" type="Label" parent="Menu2/OtherSettings/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bxa6j")
 text = "Mute"
 
 [node name="MuteBox" type="CheckBox" parent="Menu2/OtherSettings/VBoxContainer"]
@@ -201,8 +222,9 @@ theme_override_colors/font_hover_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_hover_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.92549, 0.266667, 1, 1)
 theme_override_colors/font_color = Color(0.927151, 0.266352, 1, 1)
+theme_override_fonts/font = ExtResource("3_bxa6j")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h3yo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g6ug8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvsjg")
 text = "Back"
 
