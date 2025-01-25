@@ -8,25 +8,37 @@ public partial class SingleBubble : Sprite2D
 	[Export] private float Speed = 10.0f; // Speed of movement in units per second
 	[Export] private Node2D _pointA;
 	[Export] private Node2D _pointB;
+	
+	public enum bubbleType
+	{
+		Normal,
+		Bouncy, 
+		
+		
+	}
+	[Export]
+	public bubbleType Type = bubbleType.Normal;
 	private bool _movingToB = true;
 	private bool isActive = false;
 
 	public override void _Ready()
 	{
-		// Start at Point A's position
-		if (_pointA != null)
-			Position = _pointA.Position;
-		else
-			GD.PrintErr("PointA is missing!");
-		
-		if (_pointB == null)
-			GD.PrintErr("PointB is missing!");
 		Random rnd = new Random();
 		Task.Run(()=>
 		{
 			Thread.Sleep(rnd.Next(0, 70));
 			Start();
 		});
+		switch (Type)
+		{
+			case bubbleType.Normal:
+				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-gray.png");
+				break;
+			case bubbleType.Bouncy:
+				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-pink.png");
+				break;
+		}
+		
 	}
 	
 	private void Start()

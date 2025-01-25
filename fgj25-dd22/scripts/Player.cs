@@ -20,6 +20,8 @@ public partial class Player : CharacterBody2D
 	// State
 	private Vector2 _velocity;
 	private bool _isJumping;
+	public float bounceValue = -1f;
+	public float prevFallValue = 0f;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -53,6 +55,12 @@ public partial class Player : CharacterBody2D
 			_velocity.Y = -JumpForce;
 			_isJumping = true;
 		}
+		
+		if(bounceValue > 0.1f)
+		{
+			_velocity.Y = -bounceValue;
+			bounceValue -= 20f;
+		}
 
 		// Variable jump cut
 		if (_isJumping && Input.IsActionJustReleased("ui_accept"))
@@ -77,6 +85,7 @@ public partial class Player : CharacterBody2D
 			{
 				_velocity.Y = MaxFallSpeed;
 			}
+			prevFallValue = _velocity.Y;
 		}
 		else
 		{
