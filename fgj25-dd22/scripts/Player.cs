@@ -43,10 +43,12 @@ public partial class Player : CharacterBody2D
 		if (input != 0)
 		{
 			_velocity.X = Mathf.Lerp(_velocity.X, input * Speed, Acceleration * delta);
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("walk");
 		}
 		else
 		{
 			_velocity.X = Mathf.Lerp(_velocity.X, 0, Deceleration * delta);
+			if(!_isJumping)GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("default");
 		}
 		
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH = _velocity.X > 0;
@@ -56,6 +58,7 @@ public partial class Player : CharacterBody2D
 		{
 			_velocity.Y = -JumpForce;
 			_isJumping = true;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("jump-up");
 		}
 		
 		if(bounceValue > 0.1f)
@@ -72,6 +75,7 @@ public partial class Player : CharacterBody2D
 				_velocity.Y *= JumpCutMultiplier;
 			}
 			_isJumping = false;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("jump-down");
 		}
 	}
 
