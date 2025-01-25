@@ -33,9 +33,15 @@ public partial class SingleBubble : Sprite2D
 		switch (Type)
 		{
 			case bubbleType.Normal:
-				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-gray.png");
+				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-blue.png");
 				break;
 			case bubbleType.Bouncy:
+				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-green.png");
+				break;
+			case bubbleType.Ghost:
+				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-gray.png");
+				break;
+			case bubbleType.Floating:
 				Texture = GD.Load<Texture2D>("res://assets/sprites/Bubble-pink.png");
 				break;
 		}

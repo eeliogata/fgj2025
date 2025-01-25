@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b42kdoh2iwakb"]
+[gd_scene load_steps=24 format=3 uid="uid://b42kdoh2iwakb"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_xgle5"]
 [ext_resource type="Texture2D" uid="uid://b4osdeun5uwsq" path="res://assets/sprites/Ducky-spritesheet.png" id="2_xagr8"]
@@ -7,6 +7,14 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygdot"]
 atlas = ExtResource("2_xagr8")
 region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwnae"]
+atlas = ExtResource("2_xagr8")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bw8p"]
+atlas = ExtResource("2_xagr8")
+region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlik"]
 atlas = ExtResource("2_xagr8")
@@ -73,10 +81,16 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ygdot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwnae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bw8p")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -149,7 +163,6 @@ script = ExtResource("1_xgle5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_xfl4y")
-animation = &"jump-down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
