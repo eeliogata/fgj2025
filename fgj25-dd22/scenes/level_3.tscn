@@ -138,7 +138,7 @@ light_mask = 2
 visibility_layer = 2
 z_index = 2
 z_as_relative = false
-tile_map_data = PackedByteArray("AAAyAP7/AQAAAAAAAAAyAP//AQAAAAEAAAAyAAAAAQAAAAIAAAAzAP7/AQABAAAAAAAzAP//AQABAAEAAAAzAAAAAQABAAIAAAA0AP7/AQACAAAAAAA0AP//AQACAAEAAAA0AAAAAQACAAIAAAAzAP3/BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAgAP7/AQAAAAAAAAAgAP//AQAAAAEAAAAgAAAAAQAAAAIAAAAhAP3/BAAAAAAAAAAhAP7/AQABAAAAAAAhAP//AQABAAEAAAAhAAAAAQABAAIAAAAiAP7/AQACAAAAAAAiAP//AQACAAEAAAAiAAAAAQACAAIAAAA=")
 tile_set = SubResource("TileSet_wpho3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Foreground"]
@@ -146,7 +146,7 @@ light_mask = 2
 visibility_layer = 2
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Foreground/StaticBody2D"]
-position = Vector2(1236, -12.125)
+position = Vector2(804, -12)
 shape = SubResource("RectangleShape2D_v4aq5")
 
 [node name="WordBoundary" parent="." instance=ExtResource("8_2uvda")]
@@ -154,6 +154,7 @@ position = Vector2(692, 726)
 playerPos = Vector2(120, 100)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ru48y")]
 
@@ -188,8 +189,141 @@ numOfBubbles = 4
 bubbleType = 0
 
 [node name="BubblePlatform8" parent="." instance=ExtResource("11_e416b")]
-position = Vector2(144, 264)
+position = Vector2(168, 264)
 bubbleType = 2
 
 [node name="BubblePlatform9" parent="." instance=ExtResource("11_e416b")]
-position = Vector2(-95, 240)
+position = Vector2(-24, 240)
+
+[node name="BubblePlatform10" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(24, 144)
+numOfBubbles = 2
+
+[node name="BubblePlatform11" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(-48, 48)
+numOfBubbles = 2
+
+[node name="BubblePlatform12" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(24, -48)
+numOfBubbles = 2
+bubbleType = 0
+
+[node name="BubblePlatform13" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(72, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform14" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(96, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform15" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(120, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform16" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(144, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform17" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(168, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform18" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(192, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform19" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(216, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform20" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(240, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform21" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(264, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform22" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(288, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform23" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(312, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform24" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(336, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform25" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(360, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform26" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(384, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform27" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(408, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform28" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(432, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform29" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(576, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform30" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(600, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform31" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(624, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform32" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(648, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform33" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(672, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform34" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(696, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform35" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(720, -48)
+numOfBubbles = 1
+bubbleType = 2
+
+[node name="BubblePlatform36" parent="." instance=ExtResource("11_e416b")]
+position = Vector2(744, -48)
+numOfBubbles = 1
+bubbleType = 2

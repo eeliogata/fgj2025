@@ -95,7 +95,6 @@ public partial class bubblePlatform : Node2D
 	public void _on_bounce(Node2D body)
 	{
 		Player b = body as Player;
-		GD.Print(b.prevFallValue, hasBeenBoosted);
 		if (bubbleType == SingleBubble.bubbleType.Bouncy)
 		{
 			if (hasBeenBoosted)
