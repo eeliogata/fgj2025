@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc451kpxxbpu"]
+[gd_scene load_steps=5 format=3 uid="uid://cc451kpxxbpu"]
 
 [ext_resource type="Script" path="res://scripts/bubblePlatform.cs" id="1_8r2qg"]
+[ext_resource type="AudioStream" uid="uid://btcnqw05gsjle" path="res://assets/Bubble-sound.wav" id="2_d7oqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1dmg"]
 size = Vector2(12, 12)
@@ -23,5 +24,8 @@ shape = SubResource("RectangleShape2D_s1dmg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(41.5, -6.5)
 shape = SubResource("RectangleShape2D_sq27y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d7oqb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_bounce"]

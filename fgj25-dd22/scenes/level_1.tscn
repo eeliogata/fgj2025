@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://c626f0nd58eey"]
+[gd_scene load_steps=32 format=4 uid="uid://c626f0nd58eey"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_006y3"]
 [ext_resource type="Texture2D" uid="uid://c2s5bdo0xihrd" path="res://assets/environment/Bathtub-tileset.png" id="2_e26bn"]
@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://ceh5pfyu7rq3m" path="res://assets/texts/Arrow1.png" id="11_bf2xw"]
 [ext_resource type="Texture2D" uid="uid://di2q7lv6lfh7w" path="res://assets/texts/bubblebartext.png" id="12_yvga5"]
 [ext_resource type="Texture2D" uid="uid://dtmiho20ij6q5" path="res://assets/texts/goaltext.png" id="13_e8k7r"]
-[ext_resource type="PackedScene" path="res://entities/common level things/next level tp.tscn" id="14_74biy"]
+[ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="14_74biy"]
 [ext_resource type="PackedScene" uid="uid://bwvgykegrfpoq" path="res://scenes/level_2.tscn" id="15_wxk70"]
+[ext_resource type="PackedScene" uid="uid://bodfikuerr7qw" path="res://entities/musicPlayer.tscn" id="18_vrgat"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
 texture = ExtResource("1_006y3")
@@ -259,3 +260,5 @@ texture = ExtResource("13_e8k7r")
 [node name="NextLevelTp" parent="." instance=ExtResource("14_74biy")]
 position = Vector2(1333, 636)
 nextLevel = ExtResource("15_wxk70")
+
+[node name="MusicPlayer" parent="." instance=ExtResource("18_vrgat")]

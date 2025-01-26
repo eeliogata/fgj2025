@@ -45,6 +45,7 @@ public partial class Player : CharacterBody2D
 	public void _on_died()
 	{
 		Position = playerPos;
+		(GetNode("AudioStreamPlayer") as AudioStreamPlayer).Play();
 	}
 
 	public override void _PhysicsProcess(double delta)

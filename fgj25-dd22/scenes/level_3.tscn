@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://jpw2y5kvhi8y"]
+[gd_scene load_steps=20 format=4 uid="uid://t3r8peg556st"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_f0bsd"]
 [ext_resource type="Texture2D" uid="uid://ciwbqgpuj8apo" path="res://assets/environment/Sauna-tilesheet.png" id="2_cg42v"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_wu42d"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_2uvda"]
 [ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="9_ru48y"]
+[ext_resource type="PackedScene" uid="uid://bodfikuerr7qw" path="res://entities/musicPlayer.tscn" id="11_2o23g"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_e416b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
@@ -117,7 +118,7 @@ sources/1 = SubResource("TileSetAtlasSource_50oyj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4aq5"]
 size = Vector2(74, 72.25)
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 light_mask = 4
@@ -325,3 +326,5 @@ bubbleType = 2
 position = Vector2(744, -48)
 numOfBubbles = 1
 bubbleType = 2
+
+[node name="MusicPlayer" parent="." instance=ExtResource("11_2o23g")]

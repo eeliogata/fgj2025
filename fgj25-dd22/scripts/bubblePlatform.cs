@@ -94,6 +94,7 @@ public partial class bubblePlatform : Node2D
 
 	public void _on_bounce(Node2D body)
 	{
+		(GetNode("AudioStreamPlayer") as AudioStreamPlayer).Play();
 		Player b = body as Player;
 		if (bubbleType == SingleBubble.bubbleType.Bouncy)
 		{

@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://b42kdoh2iwakb"]
+[gd_scene load_steps=26 format=3 uid="uid://b42kdoh2iwakb"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_xgle5"]
 [ext_resource type="Texture2D" uid="uid://b4osdeun5uwsq" path="res://assets/sprites/Ducky-spritesheet.png" id="2_xagr8"]
 [ext_resource type="PackedScene" uid="uid://bye3pfarwoxfl" path="res://entities/camera/camera_2d.tscn" id="3_3vu5o"]
 [ext_resource type="PackedScene" uid="uid://cqsxxvylykp3n" path="res://entities/bubble inventory/bubble_inventory.tscn" id="4_qo2du"]
+[ext_resource type="AudioStream" uid="uid://i0y56snrschd" path="res://assets/death-sound.wav" id="5_ouyxx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygdot"]
 atlas = ExtResource("2_xagr8")
@@ -172,6 +173,9 @@ shape = SubResource("CapsuleShape2D_8vi23")
 [node name="Camera2D" parent="." instance=ExtResource("3_3vu5o")]
 
 [node name="BubbleInventory" parent="." instance=ExtResource("4_qo2du")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ouyxx")
 
 [connection signal="Died" from="." to="." method="_on_died"]
 [connection signal="Died" from="." to="BubbleInventory" method="_on_player_died"]

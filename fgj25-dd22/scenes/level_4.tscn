@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dn0pev0umuo1h"]
+[gd_scene load_steps=39 format=4 uid="uid://dn0pev0umuo1h"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_6l2be"]
 [ext_resource type="Texture2D" uid="uid://ciwbqgpuj8apo" path="res://assets/environment/Sauna-tilesheet.png" id="2_1rmds"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c02k34gj6d55b" path="res://assets/environment/beercansV2.png" id="7_sygmr"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_7rsep"]
 [ext_resource type="Texture2D" uid="uid://rtwsdchcns0j" path="res://assets/environment/kiausv2.png" id="8_ukuf3"]
-[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="9_ltyi0"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="9_ltyi0"]
 [ext_resource type="Texture2D" uid="uid://71h1hoii5n1v" path="res://assets/environment/vihta.png" id="9_trlr0"]
 [ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="10_7xvvk"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_4kxgy"]
 [ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="12_ipwoj"]
+[ext_resource type="PackedScene" uid="uid://bodfikuerr7qw" path="res://entities/musicPlayer.tscn" id="16_6vpll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
 texture = ExtResource("1_6l2be")
@@ -200,7 +201,7 @@ size = Vector2(261, 870)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fosv5"]
 size = Vector2(120.5, 480.5)
 
-[node name="Level3" type="Node2D"]
+[node name="Level4" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 light_mask = 4
@@ -366,3 +367,5 @@ bubbleType = 2
 position = Vector2(1704, 960)
 numOfBubbles = 4
 bubbleType = 2
+
+[node name="MusicPlayer" parent="." instance=ExtResource("16_6vpll")]
