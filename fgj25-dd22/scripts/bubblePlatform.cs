@@ -95,20 +95,25 @@ public partial class bubblePlatform : Node2D
 	public void _on_bounce(Node2D body)
 	{
 		Player b = body as Player;
+		GD.Print(b.prevFallValue, hasBeenBoosted);
 		if (bubbleType == SingleBubble.bubbleType.Bouncy)
 		{
 			if (hasBeenBoosted)
 			{
 				b.bounceValue = b.prevFallValue * 0.8f;
+				if(b.bounceValue <= 100)
+				{
+					hasBeenBoosted = false;
+				}
 			}
-			if (!hasBeenBoosted)
+			else if(!hasBeenBoosted && b.prevFallValue <= 100)
+			{
+				
+			}
+			else if (!hasBeenBoosted)
 			{
 				b.bounceValue = b.prevFallValue * 1.5f;
 				hasBeenBoosted = true;
-			}
-			if (b.bounceValue <= 50)
-			{
-				hasBeenBoosted = false;
 			}
 		}
 		else if (body is Player && bubbleType == SingleBubble.bubbleType.Ghost)
