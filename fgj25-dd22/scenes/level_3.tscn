@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://t3r8peg556st"]
+[gd_scene load_steps=19 format=4 uid="uid://jpw2y5kvhi8y"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_f0bsd"]
 [ext_resource type="Texture2D" uid="uid://ciwbqgpuj8apo" path="res://assets/environment/Sauna-tilesheet.png" id="2_cg42v"]
@@ -8,10 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dlrsnwfxxgu2m" path="res://assets/environment/Tile-bubble.png" id="6_avw47"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_wu42d"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_2uvda"]
-[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="9_ru48y"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="9_ru48y"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_e416b"]
-[ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="11_uvclf"]
-[ext_resource type="PackedScene" uid="uid://dn0pev0umuo1h" path="res://scenes/level_4.tscn" id="12_jynd3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
 texture = ExtResource("1_f0bsd")
@@ -327,7 +325,3 @@ bubbleType = 2
 position = Vector2(744, -48)
 numOfBubbles = 1
 bubbleType = 2
-
-[node name="NextLevelTp" parent="." instance=ExtResource("11_uvclf")]
-position = Vector2(804, -59)
-nextLevel = ExtResource("12_jynd3")

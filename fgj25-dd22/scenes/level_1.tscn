@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://wpgtu5v6ybnq" path="res://assets/environment/window.png" id="7_tmwp8"]
 [ext_resource type="Texture2D" uid="uid://dbcbrvh61x6j3" path="res://assets/environment/lamp.png" id="8_lks7d"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_nsc1u"]
-[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="10_pvklh"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="10_pvklh"]
 [ext_resource type="Texture2D" uid="uid://ceh5pfyu7rq3m" path="res://assets/texts/Arrow1.png" id="11_bf2xw"]
 [ext_resource type="Texture2D" uid="uid://di2q7lv6lfh7w" path="res://assets/texts/bubblebartext.png" id="12_yvga5"]
 [ext_resource type="Texture2D" uid="uid://dtmiho20ij6q5" path="res://assets/texts/goaltext.png" id="13_e8k7r"]
-[ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="14_74biy"]
+[ext_resource type="PackedScene" path="res://entities/common level things/next level tp.tscn" id="14_74biy"]
 [ext_resource type="PackedScene" uid="uid://bwvgykegrfpoq" path="res://scenes/level_2.tscn" id="15_wxk70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
