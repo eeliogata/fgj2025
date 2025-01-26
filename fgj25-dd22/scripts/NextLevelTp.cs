@@ -15,6 +15,7 @@ public partial class NextLevelTp : Node2D
 		
 		if (body is Player)
 		{
+			GD.Print("fdsfsdsf");
 			Win win = GD.Load<PackedScene>("res://entities/common level things/win.tscn").Instantiate() as Win;
 			win.nextLevel = nextLevel;
 			foreach(Node n in GetNode("/root").GetChildren())

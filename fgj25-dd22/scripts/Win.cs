@@ -18,6 +18,7 @@ public partial class Win : Node2D
 	public void _on_next()
 	{
 		GetTree().ChangeSceneToPacked(nextLevel);
+		QueueFree();
 	}
 	
 	public void _on_menu()

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_7704g"]
 [ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="8_xpcw4"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="9_55fha"]
-[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="10_1ovi2"]
+[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="10_1ovi2"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_rgc7c"]
 [ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="12_qoada"]
 [ext_resource type="PackedScene" uid="uid://t3r8peg556st" path="res://scenes/level_3.tscn" id="13_74lew"]
@@ -141,7 +141,7 @@ size = Vector2(672, 121.125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4ps0"]
 size = Vector2(264.5, 218)
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 light_mask = 4
@@ -199,7 +199,9 @@ shape = SubResource("RectangleShape2D_v4aq5")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Foreground/StaticBody2D"]
 position = Vector2(1273, 222)
+rotation = 3.14159
 shape = SubResource("RectangleShape2D_v4aq5")
+one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Foreground/StaticBody2D"]
 position = Vector2(971.75, -156)
