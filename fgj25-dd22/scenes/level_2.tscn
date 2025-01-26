@@ -148,7 +148,6 @@ tile_map_data = PackedByteArray("AAAHAAkAAAAAAAAAAwAIAAkAAAAAAAAAAwAJAAkAAAAAAAA
 tile_set = SubResource("TileSet_wpho3")
 
 [node name="Player" parent="." instance=ExtResource("7_7704g")]
-visible = false
 position = Vector2(372, 341)
 amountOfSimple = 2
 amountOfBouncy = 1
