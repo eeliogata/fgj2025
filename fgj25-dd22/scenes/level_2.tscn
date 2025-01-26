@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_7704g"]
 [ext_resource type="PackedScene" uid="uid://t2ttrpbspaui" path="res://entities/spikes/spikes.tscn" id="8_xpcw4"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="9_55fha"]
-[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="10_1ovi2"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="10_1ovi2"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_rgc7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
@@ -209,9 +209,9 @@ position = Vector2(692, 726)
 playerPos = Vector2(120, 100)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_1ovi2")]
+process_mode = 3
 
 [node name="Spikes" parent="." instance=ExtResource("8_xpcw4")]
 position = Vector2(504, 696)
