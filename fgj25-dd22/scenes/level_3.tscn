@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://jpw2y5kvhi8y"]
+[gd_scene load_steps=19 format=4 uid="uid://t3r8peg556st"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_f0bsd"]
 [ext_resource type="Texture2D" uid="uid://ciwbqgpuj8apo" path="res://assets/environment/Sauna-tilesheet.png" id="2_cg42v"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrsnwfxxgu2m" path="res://assets/environment/Tile-bubble.png" id="6_avw47"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_wu42d"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_2uvda"]
-[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="9_ru48y"]
+[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="9_ru48y"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_e416b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
@@ -126,11 +126,9 @@ tile_map_data = PackedByteArray("AAAHAAkAAAAAAAAAAwAIAAkAAAAAAAAAAwAJAAkAAAAAAAA
 tile_set = SubResource("TileSet_wpho3")
 
 [node name="Player" parent="." instance=ExtResource("7_wu42d")]
-position = Vector2(372, 341)
-amountOfSimple = 2
-amountOfBouncy = 1
-amountOfFloating = 1
-playerPos = Vector2(400, 100)
+position = Vector2(360, 540)
+amountOfGhost = 1
+playerPos = Vector2(360, 540)
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 top_level = true
@@ -154,9 +152,9 @@ position = Vector2(692, 726)
 playerPos = Vector2(120, 100)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ru48y")]
+process_mode = 3
 
 [node name="BubblePlatform" parent="." instance=ExtResource("11_e416b")]
 position = Vector2(240, 648)
