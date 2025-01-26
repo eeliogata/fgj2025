@@ -17,7 +17,7 @@ public partial class spikes : Node2D
 		c.Scale = new Vector2(numOfSpikes*2, 1);
 		c.Position = new Vector2(((float)numOfSpikes * 24f)/2f, 10);
 		CollisionShape2D a = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
-		a.Scale = new Vector2(numOfSpikes*0.9f, 1);
+		a.Scale = new Vector2(numOfSpikes*((24f*(float)numOfSpikes - 10f)/(24*numOfSpikes)), 1);
 		a.Position = new Vector2(((float)numOfSpikes * 24f)/2f, 0);
 		for (int i = 0; i < numOfSpikes; i++)
 		{

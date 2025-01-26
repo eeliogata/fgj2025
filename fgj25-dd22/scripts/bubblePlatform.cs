@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,17 +7,19 @@ public partial class bubblePlatform : Node2D
 {
 
 	[Export] private int numOfBubbles = 1;
-	[Export] public bool permanent = false;
-
 	// Called when the node enters the scene tree for the first time.
 
 	[Export]
 	public SingleBubble.bubbleType bubbleType = SingleBubble.bubbleType.Normal;
 
+	private Vector2 initPos;
+
+	private bool reset = false;
 
 	public override void _Ready()
 	{
 		var b = GD.Load<PackedScene>("res://entities/platforms/single_bubble.tscn");
+		initPos = Position;
 		Node[] bubbles = new Node[numOfBubbles];
 		CollisionShape2D c = GetNode<CollisionShape2D>("StaticBody2D/CollisionShape2D");
 		c.Scale = new Vector2(numOfBubbles * 2, 1);
@@ -32,6 +35,17 @@ public partial class bubblePlatform : Node2D
 			bubbles[i] = bi;
 			bi.CallDeferred(Node2D.MethodName.SetPosition, new Vector2(i * 24, 0));
 
+		}
+		if (bubbleType == SingleBubble.bubbleType.Ghost || bubbleType == SingleBubble.bubbleType.Floating)
+		{
+			try
+			{
+				(GetNode("../Player") as Player).Died += delegate ()
+				{
+					reset = true;
+				};
+			}
+			catch (Exception) { }
 		}
 	}
 
@@ -54,7 +68,18 @@ public partial class bubblePlatform : Node2D
 				c.Disabled = a.Disabled = true;
 				Modulate = new Color(255, 255, 255, 0);
 				disappear = false;
+				opacity = 1f;
 			}
+		}
+		if (reset)
+		{
+			CollisionShape2D c = GetNode<CollisionShape2D>("StaticBody2D/CollisionShape2D");
+			CollisionShape2D a = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
+			c.Disabled = a.Disabled = false;
+			Modulate = new Color(1, 1, 1, 1);
+			disappear = false;
+			Position = initPos;
+			reset = false;
 		}
 	}
 

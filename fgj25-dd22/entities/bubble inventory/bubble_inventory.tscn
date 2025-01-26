@@ -158,7 +158,9 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="Container/GridContainer/Bouncy"]
 layout_mode = 2
-tooltip_text = "Simple bubble"
+tooltip_text = "Bouncy bubble
+
+It makes you jump higher."
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_u0ngp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gcuka")
@@ -179,7 +181,9 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="Container/GridContainer/Ghost"]
 layout_mode = 2
-tooltip_text = "Simple bubble"
+tooltip_text = "Ghost bubble
+
+It dissapears after you step on it."
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_lujfq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ld863")
@@ -200,7 +204,9 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="Container/GridContainer/Floating"]
 layout_mode = 2
-tooltip_text = "Simple bubble"
+tooltip_text = "Floating bubble
+
+It will start floating up when you place it down. Be careful!"
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_tv34g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p73nq")

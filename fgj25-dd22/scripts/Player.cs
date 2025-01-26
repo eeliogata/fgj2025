@@ -45,7 +45,6 @@ public partial class Player : CharacterBody2D
 	public void _on_died()
 	{
 		Position = playerPos;
-		
 	}
 
 	public override void _PhysicsProcess(double delta)
