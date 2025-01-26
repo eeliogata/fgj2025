@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dymso6afwrbbd"]
+[gd_scene load_steps=12 format=3 uid="uid://dy203k62skox6"]
 
 [ext_resource type="Script" path="res://menus/pause_menu.gd" id="1_7cteb"]
 [ext_resource type="FontFile" uid="uid://cl713v4v5bjxq" path="res://assets/font/LIBRIUM_.ttf" id="1_xoy5t"]

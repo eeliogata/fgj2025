@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c626f0nd58eey"]
+[gd_scene load_steps=22 format=4 uid="uid://dhukjl8ia5j8b"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_006y3"]
 [ext_resource type="Texture2D" uid="uid://c2s5bdo0xihrd" path="res://assets/environment/Bathtub-tileset.png" id="2_e26bn"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrsnwfxxgu2m" path="res://assets/environment/Tile-bubble.png" id="5_v0jla"]
 [ext_resource type="PackedScene" uid="uid://b42kdoh2iwakb" path="res://entities/player/player.tscn" id="7_73310"]
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="8_nsc1u"]
-[ext_resource type="PackedScene" uid="uid://dymso6afwrbbd" path="res://menus/pause_menu.tscn" id="10_pvklh"]
+[ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="10_pvklh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
 texture = ExtResource("1_006y3")
