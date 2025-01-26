@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bwvgykegrfpoq"]
+[gd_scene load_steps=29 format=4 uid="uid://bwvgykegrfpoq"]
 
 [ext_resource type="Texture2D" uid="uid://dafysyp5fs1pe" path="res://assets/environment/Tile.png" id="1_7hv7t"]
 [ext_resource type="Texture2D" uid="uid://ciwbqgpuj8apo" path="res://assets/environment/Sauna-tilesheet.png" id="2_monoa"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dhufeg1fh3ef5" path="res://entities/common level things/word boundary.tscn" id="9_55fha"]
 [ext_resource type="PackedScene" uid="uid://dy203k62skox6" path="res://menus/pause_menu.tscn" id="10_1ovi2"]
 [ext_resource type="PackedScene" uid="uid://cc451kpxxbpu" path="res://entities/platforms/bubblePlatform.tscn" id="11_rgc7c"]
+[ext_resource type="PackedScene" uid="uid://bvo13r4iwe6x4" path="res://entities/common level things/next level tp.tscn" id="12_qoada"]
+[ext_resource type="PackedScene" uid="uid://t3r8peg556st" path="res://scenes/level_3.tscn" id="13_74lew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtf8c"]
 texture = ExtResource("1_7hv7t")
@@ -232,3 +234,7 @@ position = Vector2(1175, 625)
 position = Vector2(936, -24)
 rotation = 3.14159
 numOfSpikes = 4
+
+[node name="NextLevelTp" parent="." instance=ExtResource("12_qoada")]
+position = Vector2(1284, -59)
+nextLevel = ExtResource("13_74lew")

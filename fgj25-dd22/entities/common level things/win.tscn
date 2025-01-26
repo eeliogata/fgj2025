@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ansrdkyxv3p"]
+
+[ext_resource type="Script" path="res://scripts/Win.cs" id="1_7q36o"]
+[ext_resource type="Texture2D" uid="uid://dlj3h4trghhhh" path="res://assets/menus/VictoryScreen.png" id="2_kfa8t"]
+[ext_resource type="FontFile" uid="uid://dqowpvuowi358" path="res://assets/font/LIBRIT__.ttf" id="3_yo2xe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ov3jy"]
+font = ExtResource("3_yo2xe")
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[node name="Win" type="Node2D"]
+top_level = true
+script = ExtResource("1_7q36o")
+
+[node name="VictoryScreen" type="Sprite2D" parent="."]
+top_level = true
+clip_children = 2
+position = Vector2(550, 362)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_kfa8t")
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+clip_children = 2
+offset_left = 28.0
+offset_top = 4.0
+offset_right = 761.0
+offset_bottom = 85.0
+text = "LEVEL COMPLETE!"
+label_settings = SubResource("LabelSettings_ov3jy")
+
+[node name="Button" type="Button" parent="Label"]
+top_level = true
+clip_children = 2
+layout_mode = 0
+offset_left = 643.0
+offset_top = 300.0
+offset_right = 1204.0
+offset_bottom = 436.0
+theme_override_fonts/font = ExtResource("3_yo2xe")
+theme_override_font_sizes/font_size = 50
+text = "NEXT LEVEL"
+
+[node name="Button2" type="Button" parent="Label"]
+top_level = true
+clip_children = 2
+layout_mode = 0
+offset_left = 640.0
+offset_top = 446.0
+offset_right = 1204.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("3_yo2xe")
+theme_override_font_sizes/font_size = 50
+text = "BACK TO MENU"
+
+[connection signal="button_up" from="Label/Button" to="." method="_on_next"]
+[connection signal="button_up" from="Label/Button2" to="." method="_on_menu"]
