@@ -164,9 +164,9 @@ tile_map_data = PackedByteArray("AAAHAAkAAAAAAAAAAgAIAAkAAAAAAAAAAgAJAAkABQAAAAA
 tile_set = SubResource("TileSet_wpho3")
 
 [node name="Player" parent="." instance=ExtResource("7_73310")]
-position = Vector2(118, 53)
+position = Vector2(118, 300)
 amountOfSimple = 2
-playerPos = Vector2(120, 120)
+playerPos = Vector2(120, 300)
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 top_level = true

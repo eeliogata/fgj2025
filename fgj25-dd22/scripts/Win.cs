@@ -24,6 +24,7 @@ public partial class Win : Node2D
 	public void _on_menu()
 	{
 		GetTree().ChangeSceneToFile("res://menus/MainMenu.tscn");
+		QueueFree();
 	}
 	
 	
