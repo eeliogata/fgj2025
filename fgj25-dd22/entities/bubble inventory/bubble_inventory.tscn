@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cqsxxvylykp3n"]
 
 [ext_resource type="Script" path="res://scripts/BubbleInventory.cs" id="1_ohqqm"]
-[ext_resource type="ButtonGroup" uid="uid://bxyb2b4ntwub" path="res://assets/sprites/hotbar_group.tres" id="2_5ehbf"]
+[ext_resource type="ButtonGroup" path="res://assets/sprites/hotbar_group.tres" id="2_5ehbf"]
 [ext_resource type="Texture2D" uid="uid://wv3pghghcwvw" path="res://assets/sprites/Bubble-gray.png" id="2_x1iut"]
 [ext_resource type="Texture2D" uid="uid://d26ebge47xf3q" path="res://assets/sprites/Bubble-blue.png" id="3_6f6px"]
 [ext_resource type="Texture2D" uid="uid://b3h7nj3fhmebg" path="res://assets/sprites/Bubble-pink.png" id="3_bbsk2"]
