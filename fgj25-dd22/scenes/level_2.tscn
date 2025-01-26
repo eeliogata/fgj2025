@@ -214,7 +214,6 @@ rotation = 3.14159
 playerPos = Vector2(120, 100)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_1ovi2")]
 process_mode = 3
